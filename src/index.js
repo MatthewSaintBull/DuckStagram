@@ -5,8 +5,23 @@ let image = null
 let applied_filter = ""
 
 
+const checkBrowser = () => new Promise((resolve, reject) => {
+    let browser = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
+    browser[1] === "Chrome" && browser[2] >= 52 && resolve(browser[1])
+    browser[1] === "Firefox" && Browser[2] >= 49 && resolve(browser[1])
+    reject("It seems that your browser doesn't support the canvas filter function, so you can only see the filter applied to the photos but you can't still download them")
+})
+
+const errorPage = (error) => {
+    document.getElementById("download").innerHTML = `
+        <div class="alert alert-danger">
+            <strong>Please, Change Browser!</strong> ${error}
+        </div>
+    `
+
+}
+
 const loadFilters = () => {
-    
     const dropdown = document.getElementById("dropDownItems")
     filters.map(filter => {
         const newFilter = document.createElement("button")
@@ -80,4 +95,7 @@ const download = () => {
     saveAs(document.getElementById('imageCtx').toDataURL("image/jpeg"), "duckstagrammed.jpg")
 }
 
-document.onload = loadFilters()
+document.onload = checkBrowser().finally(res => {
+    console.log(res)
+    loadFilters()
+}).catch(err => errorPage(err))
