@@ -1,0 +1,31 @@
+.preview{
+    max-width: 150px;
+}
+.preview:hover {
+    opacity: 0.6;
+}
+#carousel-preview{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#data{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    max-width: 100%;
+}
+
+#carousel-filters{
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+.gradient_line{ 
+    margin: 0 0 50px 0;
+    display: block;
+    border: none;
+    height: 1px;
+    background: grey;
+    background: linear-gradient(to right, white, grey, white);
+}

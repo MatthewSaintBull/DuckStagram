@@ -3,6 +3,7 @@ body {
 }
 
 #container{
+    overflow-x: hidden;
     justify-content: center;
 }
 
@@ -14,7 +15,6 @@ body {
     min-height: 60%;
     justify-content: center;
 }
-
 
 #image {
     display: flex; 
@@ -28,17 +28,5 @@ body {
 }
 
 #btn-box {
-    width: 60%;
-}
-
-#preview-filters{
-    display: none;
-    margin-top: 20px;
-    justify-content: center;
-}
-#dropDownItems{
-    width: 60%;
-}
-#dropdownMenuButton{
     width: 60%;
 }
