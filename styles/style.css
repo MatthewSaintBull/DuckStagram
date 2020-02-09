@@ -16,10 +16,6 @@ body {
     justify-content: center;
 }
 
-.preview-filters {
-    max-width: 150px;
-}
-
 #image {
     display: flex; 
     max-width: 300px; 
@@ -32,17 +28,5 @@ body {
 }
 
 #btn-box {
-    width: 60%;
-}
-
-#preview-filters{
-    display: none;
-    margin-top: 20px;
-    justify-content: center;
-}
-#dropDownItems{
-    width: 60%;
-}
-#dropdownMenuButton{
     width: 60%;
 }

@@ -45,7 +45,7 @@ document.getElementById("add-image").onchange = function () {
         checkExtension(e.target.result).then(res => {
             document.getElementById("image").src = e.target.result
             document.getElementById("image").style.display = "flex"
-            document.getElementById("preview-filters").style.display = "flex"
+            document.getElementById("carousel-filters").style.display = "block"
             console.log("set")
             image = event.target.result
             mapImages()
