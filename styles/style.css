@@ -3,6 +3,7 @@ body {
 }
 
 #container{
+    overflow-x: hidden;
     justify-content: center;
 }
 
@@ -15,6 +16,9 @@ body {
     justify-content: center;
 }
 
+.preview-filters {
+    max-width: 150px;
+}
 
 #image {
     display: flex; 
