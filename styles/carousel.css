@@ -1,4 +1,18 @@
-#carousel-filters {
+.preview{
+    max-width: 150px;
+}
+.preview:hover {
+    opacity: 0.6;
+}
+#carousel-preview{
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+#data{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    max-width: 100%;
 }

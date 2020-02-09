@@ -18,14 +18,13 @@ const errorPage = (error) => {
             <strong>Please, Change Browser!</strong> ${error}
         </div>
     `
-
 }
 
 const loadFilters = () => {
     const dropdown = document.getElementById("dropDownItems")
     filters.map(filter => {
         const newFilter = document.createElement("button")
-        newFilter.addEventListener("click", event => handleSelectionFilter(event))
+        newFilter.addEventListener("click", event => handleSelectionFilter(event.target.value))
         newFilter.appendChild(document.createTextNode(filter.name))
         newFilter.classList.add("dropdown-item")
         newFilter.value = filter.value
@@ -47,12 +46,15 @@ document.getElementById("add-image").onchange = function () {
             document.getElementById("image").src = e.target.result
             document.getElementById("image").style.display = "flex"
             document.getElementById("preview-filters").style.display = "flex"
-            image = e.target.result
+            console.log("set")
+            image = event.target.result
+            mapImages()
         })
             .catch(err => { return err })
-    };
+    }
     reader.readAsDataURL(this.files[0]);
-};
+
+}
 
 const applyFilter = (filter) => new Promise((resolve, reject) => {
     var img = new Image();
@@ -77,8 +79,9 @@ const applyFilter = (filter) => new Promise((resolve, reject) => {
     }
 })
 
-const handleSelectionFilter = (event) => {
-    const filter = _.find(filters, f => { return f.value === event.target.value })
+const handleSelectionFilter = (filterValue) => {
+    console.log(filterValue)
+    const filter = _.find(filters, f => { return f.value === filterValue })
     applied_filter && document.getElementById('image').classList.remove(applied_filter)
     applyFilter(filter).then(res => {
         document.getElementById('image').classList.add(filter.value)
