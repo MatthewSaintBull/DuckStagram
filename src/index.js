@@ -46,7 +46,6 @@ document.getElementById("add-image").onchange = function () {
         checkExtension(e.target.result).then(res => {
             document.getElementById("image").src = e.target.result
             document.getElementById("image").style.display = "flex"
-            document.getElementById("preview-text").style.display = "none"
             document.getElementById("preview-filters").style.display = "flex"
             image = e.target.result
         })
@@ -96,6 +95,5 @@ const download = () => {
 }
 
 document.onload = checkBrowser().finally(res => {
-    console.log(res)
     loadFilters()
 }).catch(err => errorPage(err))

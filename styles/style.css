@@ -15,12 +15,9 @@ body {
     justify-content: center;
 }
 
-#preview-text {
-    display: inline;
-}
 
 #image {
-    display: none; 
+    display: flex; 
     max-width: 300px; 
     max-height: 300px; 
 }
