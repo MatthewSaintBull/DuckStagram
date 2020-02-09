@@ -20,17 +20,7 @@ const errorPage = (error) => {
     `
 }
 
-const loadFilters = () => {
-    const dropdown = document.getElementById("dropDownItems")
-    filters.map(filter => {
-        const newFilter = document.createElement("button")
-        newFilter.addEventListener("click", event => handleSelectionFilter(event.target.value))
-        newFilter.appendChild(document.createTextNode(filter.name))
-        newFilter.classList.add("dropdown-item")
-        newFilter.value = filter.value
-        dropdown.appendChild(newFilter)
-    })
-}
+
 
 const checkExtension = file => new Promise((resolve, reject) => {
     file = file.split(";")
@@ -98,5 +88,5 @@ const download = () => {
 }
 
 document.onload = checkBrowser().finally(res => {
-    loadFilters()
+    console.log("checked")
 }).catch(err => errorPage(err))
