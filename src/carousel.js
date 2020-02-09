@@ -1,11 +1,11 @@
 let carousel = document.getElementById("data")
+
 const elements = carousel.getAttribute("elements")
 
 const mapImages = () => {
     carousel.innerHTML = ""
     filters.map(filter => {
         const imagePreview = document.createElement("img")
-        imagePreview.classList.add("lazy")
         imagePreview.classList.add("preview")
         imagePreview.classList.add("img-fluid")
         imagePreview.src = "./assets/logo.svg"
