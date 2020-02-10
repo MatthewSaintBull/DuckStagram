@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148703095-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -36,22 +35,28 @@
 </head>
 
 <body>
-    <div id="header">
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
-                <img src="./assets/logo.svg" width="30" height="30" class="d-inline-block align-top"
-                    alt="Logo DuckStagram"> DuckStagram
-            </a>
-        </nav>
-    </div>
+    <nav class="navbar-fixed-top navbar navbar-dark bg-dark" id="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo DuckStagram">
+            DuckStagram
+        </a>
+    </nav>
 
-    <div id="container">
-        <div id="image-preview" class="row">
+    <div id="container" class="container-fluid">
+        <div class="flex-row" id="jumbotron">
+            <div class="jumbotron" style="width: 100%; text-align: center;">
+                <h1 style="color: #EEBC5A;">Duckstagram? <i class="fa fa-heart-o"></i></h1>
+                <p>Yep! Duckstagram is a server-less web-app which allows to you to apply filters onto your photos and
+                    download them with just one quack!</p>
+            </div>
+        </div>
+
+        <div id="image-preview" class="flex-row">
             <img id="image" class="img-fluid" src="assets/preview.png" alt="Image Preview" />
             <canvas id="imageCtx" style="display: none">
         </div>
 
-        <div id="carousel-filters" class="row">
+        <div id="carousel-filters" class="flex-row">
             <hr class="gradient_line" />
             <h5 style="color: brown">
                 Filters
@@ -62,7 +67,7 @@
             </div>
         </div>
 
-        <div id="upload" class="row">
+        <div id="upload" class="flex-row">
             <button onclick="document.getElementById('add-image').click()" class="btn btn-secondary" id="btn-box">Upload
                 your photo <i class="fa fa-upload"></i>
             </button>
@@ -70,14 +75,17 @@
         </div>
 
 
-        <div id="download" class="row" style="display: none">
+        <div id="download" class="flex-row" style="display: none">
             <button onclick="download()" class="btn btn-secondary" id="btn-box">Download the Duckstagrammed Photo <i
                     class="fa fa-download"></i>
             </button>
             <input id="add-image" type="file" name="name" style="display: none;" />
         </div>
-
     </div>
+    <footer class="page-footer bg-dark" id="footer">
+        <p>&copy; 2020 <a href="https://github.com/MatthewSaintBull">Matteo Santoro</a></p>
+    </footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
