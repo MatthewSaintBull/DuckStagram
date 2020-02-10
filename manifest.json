@@ -1,0 +1,37 @@
+{
+  "name": "Duckstagram",
+  "theme_color": "#2f2f2f",
+  "background_color": "#2f2f2f",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "Scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "assets/res/drawable-mdpi/ic_shortcut_logo.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/res/drawable-hdpi/ic_shortcut_logo.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/res/drawable-xhdpi/ic_shortcut_logo.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/res/drawable-xxhdpi/ic_shortcut_logo.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/res/drawable-xxxhdpi/ic_shortcut_logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
