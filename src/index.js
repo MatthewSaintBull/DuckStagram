@@ -4,6 +4,18 @@ let image = null
 
 let applied_filter = ""
 
+let loaded_filters = []
+
+const filters_to_load = 3
+
+let filters = filters_list;
+
+Array.prototype.ontop = function (val) {
+    return new Promise((resolve, reject) => {
+        this.splice(1,0,val)
+        resolve()
+    })
+}
 
 const checkBrowser = () => new Promise((resolve, reject) => {
     let browser = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
@@ -20,7 +32,13 @@ const errorPage = (error) => {
     `
 }
 
-
+const loadFilters = () => {
+    let new_f = _.take(filters, filters_to_load)
+    filters = _.xor(filters, new_f)
+    loaded_filters.ontop(new_f).then(loaded_filters = _.flattenDeep(loaded_filters))
+    mapImages()
+    filters.length || (document.getElementById("load-filters").style.display = "none")
+}
 
 const checkExtension = file => new Promise((resolve, reject) => {
     file = file.split(";")
@@ -48,7 +66,7 @@ document.getElementById("add-image").onchange = function () {
 
 const applyFilter = (filter) => new Promise((resolve, reject) => {
     var img = new Image();
-
+    console.log("filter", filter)
     img.crossOrigin = '';
     img.src = document.getElementById('image').src;
 
@@ -70,8 +88,7 @@ const applyFilter = (filter) => new Promise((resolve, reject) => {
 })
 
 const handleSelectionFilter = (filterValue) => {
-    console.log(filterValue)
-    const filter = _.find(filters, f => { return f.value === filterValue })
+    const filter = _.find(loaded_filters, f => { return f.value === filterValue })
     applied_filter && document.getElementById('image').classList.remove(applied_filter)
     applyFilter(filter).then(res => {
         document.getElementById('image').classList.add(filter.value)
@@ -87,6 +104,6 @@ const download = () => {
     saveAs(document.getElementById('imageCtx').toDataURL("image/jpeg"), "duckstagrammed.jpg")
 }
 
-document.onload = checkBrowser().finally(res => {
-    console.log("checked")
-}).catch(err => errorPage(err))
+document.onload = checkBrowser()
+    .then(loadFilters())
+    .catch(err => errorPage(err))

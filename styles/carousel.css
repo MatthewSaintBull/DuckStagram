@@ -24,6 +24,13 @@
     display: none;
     justify-content: center;
 }
+
+#load-filters {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 .gradient_line{ 
     margin: 0 0 20px 0;
     display: block;
