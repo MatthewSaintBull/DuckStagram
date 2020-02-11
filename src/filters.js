@@ -1,4 +1,4 @@
-const filters = [
+const filters_list = [
     {
         name: "Normal",
         value: "reset-filter",
