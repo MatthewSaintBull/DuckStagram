@@ -1,6 +1,6 @@
 self.addEventListener('install', function (e) {
     e.waitUntil(
-        caches.open('postinstagrammabili').then(function (cache) {
+        caches.open('duckstagram').then(function (cache) {
             return cache.addAll([
                 '/src/index.js',
                 '/src/filters.js',
