@@ -102,4 +102,16 @@
 <script src="./src/carousel.js"></script>
 <script src="./src/index.min.js"></script>
 
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/', updateViaCache: 'all' })
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+        navigator.serviceWorker.ready.then(function (registration) {
+            console.log('Service Worker Ready');
+        });
+
+    }
+</script>
 </html>
