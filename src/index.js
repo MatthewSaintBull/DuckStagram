@@ -12,16 +12,16 @@ let filters = filters_list;
 
 Array.prototype.ontop = function (val) {
     return new Promise((resolve, reject) => {
-        this.splice(1,0,val)
+        this.splice(1, 0, val)
         resolve()
     })
 }
 
 const checkBrowser = () => new Promise((resolve, reject) => {
-    let browser = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
-    browser[1] === "Chrome" && browser[2] >= 52 && resolve(browser[1])
-    browser[1] === "Firefox" && Browser[2] >= 49 && resolve(browser[1])
-    reject("It seems that your browser doesn't support the canvas filter function, so you can only see the filter applied to the photos but you can't still download them")
+    navigator.vendor.match("Apple") ?
+        reject("It seems that your browser doesn't support the canvas filter function, so you can only see the filter applied to the photos but you can't still download them")
+    :
+        resolve()
 })
 
 const errorPage = (error) => {
