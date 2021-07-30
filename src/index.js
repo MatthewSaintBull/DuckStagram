@@ -10,6 +10,11 @@ const filters_to_load = 3
 
 let filters = filters_list;
 
+
+import '../styles/carousel.css'
+import '../styles/filters.css'
+import '../styles/style.css'
+
 Array.prototype.ontop = function (val) {
     return new Promise((resolve, reject) => {
         this.splice(1,0,val)
