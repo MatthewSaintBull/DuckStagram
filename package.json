@@ -1,0 +1,25 @@
+{
+  "name": "duckstagram",
+  "version": "1.0.0",
+  "description": "Duckstagram web app",
+  "main": "sw.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewSaintBull/DuckStagram.git"
+  },
+  "keywords": [
+    "instagram",
+    "duckstagram",
+    "duckies",
+    "ducks"
+  ],
+  "author": "Matteo Santoro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MatthewSaintBull/DuckStagram/issues"
+  },
+  "homepage": "https://github.com/MatthewSaintBull/DuckStagram#readme"
+}
