@@ -10,7 +10,7 @@ module.exports = {
       },
     ],
   },
-  entry: ['./src/index.js', './src/carousel.js', './src/filters.js'],
+  entry: ['./src/carousel.js', './src/filters.js', './src/index.js'],
   output: {
     filename: 'bundle.js',
   },
